@@ -145,3 +145,6 @@ function loginPerformClick() {
     modal.remove();
   });
 }
+function redir(){
+  window.location.href = "index.html";
+}
