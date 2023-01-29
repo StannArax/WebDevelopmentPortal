@@ -1,0 +1,169 @@
+:root {
+    --clr: #161718;
+    --navclr: #fdfdfd;
+    --indclr: #f4f80a;
+}
+
+body {
+    background-color: var(--clr);
+    color: var(--navclr);
+    min-width: 600px;
+}
+
+header {
+    top: 4%;
+    position: fixed;
+    height: 7%;
+    float: left;
+}
+
+header #logo {
+    width: 10%;
+    position: fixed;
+    left: 1%;
+    top: 2%;
+    height: auto;
+    float: left;
+    text-align: left;
+}
+
+header #logo svg {
+    text-align: center;
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+}
+
+header #navigator {
+    width: 80%;
+    height: auto;
+    float: left;
+}
+header #profile {
+    width: 10%;
+    position: fixed;
+    right: 1%;
+    top: 5%;
+    height: auto;
+    float: left;
+    text-align: right;
+}
+
+header #profile svg {
+    text-align: center;
+    width: 24px;
+    height: auto;
+    cursor: pointer;
+    margin-left: 8%;
+}
+
+#dark-theme {
+    background-color: white;
+    border-radius: 50%;
+}
+#article-both-sides{
+    width: 100%;
+    height: auto;
+    float:left;
+}
+#article-bottom{
+    width: 100%;
+    height: auto;
+    float:left;
+    text-align: center;
+}
+article {
+    position: absolute;
+    width: 90%;
+    height: 75%;
+    top: 15%;
+    float: left;
+}
+article #left-article{
+    float:left;
+    width: 50%;
+}
+article #right-article{
+    float:left;
+    width: 50%;
+}
+article .content{
+    float:left;
+    padding: 0 1% 0 1%;
+}
+#cont-left{
+    width: 40%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    float:left;
+}
+#cont-right{
+    width: 60%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    float:left;
+}
+.small-img{
+    width: 100%;
+    border-radius: 8px;
+}
+.bottom-image{
+    width: 20%;
+    border-radius: 8px;
+}
+#article-bottom-left{
+    float:left;
+}
+#article-bottom-right{
+    float:left;
+}
+footer {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    justify-items: center;
+    float: left;
+}
+
+footer #foo-left {
+    position: fixed;
+    bottom: 1%;
+    left: 1%;
+}
+
+footer #foo-left span {
+    text-align: center;
+    font-size: large;
+}
+
+footer #foo-middle {
+    position: fixed;
+    text-align: center;
+    bottom: 1%;
+}
+
+footer #foo-right {
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+}
+
+footer #foo-right svg {
+    width: 24px;
+    height: auto;
+}
+
+footer #foo-right #left1 {
+    bottom: 1%;
+    cursor: pointer;
+}
+
+footer #foo-right #left2 {
+    bottom: 1%;
+    cursor: pointer;
+}
+
+footer #foo-right #left3 {
+    bottom: 1%;
+    cursor: pointer;
+}

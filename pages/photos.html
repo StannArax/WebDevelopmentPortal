@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="header" style="align-items: center; justify-content: center; height: 100%; width: 100%; padding: 2%;">
+        <h1 id="text" style="left: 0;
+        line-height: 200px;
+        margin-top: -100px;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        width: 100%;">Click here to load images!</h1>
+
+        <script>
+            document.getElementById("text").addEventListener("click", function () {
+                var element = document.getElementById("text");
+                element.parentNode.removeChild(element);
+                showImages();
+            });
+        </script>
+        <script>
+
+            function showImages() {
+                var directory = "img";
+                var images = [
+                    directory + "/" + "black-torquise-AI.jpeg",
+                    directory + "/" + "machine-learning-temsili.jpg",
+                    directory + "/" + "prog-lang-cloud.jpeg",
+                    directory + "/" + "World-Connection.jpeg",
+                    directory + "/" + "black-torquise-AI.jpeg",
+                    directory + "/" + "machine-learning-temsili.jpg",
+                    directory + "/" + "prog-lang-cloud.jpeg",
+                    directory + "/" + "World-Connection.jpeg",
+                    directory + "/" + "black-torquise-AI.jpeg",
+                    directory + "/" + "machine-learning-temsili.jpg",
+                    directory + "/" + "prog-lang-cloud.jpeg",
+                    directory + "/" + "World-Connection.jpeg",
+                    directory + "/" + "black-torquise-AI.jpeg",
+                    directory + "/" + "machine-learning-temsili.jpg",
+                    directory + "/" + "prog-lang-cloud.jpeg",
+                    directory + "/" + "World-Connection.jpeg",
+                ];
+                const imgElements = [];
+                for (let i = 0; i < images.length; i++) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = images[i];
+                    imgElement.style.height = "19%";
+                    imgElement.style.margin = "1%";
+                    imgElement.style.float = "left";
+                    imgElement.style.borderRadius = "4px";
+                    imgElements.push(imgElement);
+                }
+
+                const container = document.getElementById('header');
+                imgElements.forEach(imgElement => container.appendChild(imgElement));
+
+            }
+        </script>
+    </div>
+</body>
+
+</html>

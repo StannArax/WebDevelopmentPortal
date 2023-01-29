@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        :root{
+            --weak: #f00;
+            --medium: yellow;
+            --strong: lime;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #222;
+        }
+        .login-container{
+            position: relative;
+            width: 400px;
+            padding: 30px;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border: 1px solid #111;
+            gap: 10px;
+            padding-bottom: 70px;
+            -webkit-box-reflect: below 1px linear-gradient
+            (transparent, transparent, #0005);
+        }
+        .login-container h2{
+            color:#0f0;
+            font-weight: 500;
+        }
+        .login-container .login-inputBox{
+            position: relative;
+            width: 100%;
+        }
+        .login-container .login-inputBox input{
+            position: relative;
+            width: 100%;
+            background-color: #222;
+            border: none;
+            outline: none;
+            padding: 10px;
+            color: #fff;
+            font-size: 1.1em;
+        }
+        .login-container .login-strengthMeter{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #222;
+        }
+        .login-container .login-strengthMeter::before{
+            content: '';
+            position: absolute;
+            width: 10%;
+            height: 100%;
+            transition: 0.5s;
+        }
+        .login-container.weak .login-strengthMeter::before{
+            width: 10%;
+            background-color: var(--weak);
+            filter: drop-shadow(0 0 5px var(--weak)) drop-shadow(0 0 10px var(--weak)) drop-shadow(0 0 20px var(--weak));
+        }
+        .login-container.medium .login-strengthMeter::before{
+            width: 66.6%;
+            background-color: var(--medium);
+            filter: drop-shadow(0 0 5px var(--medium)) drop-shadow(0 0 10px var(--medium)) drop-shadow(0 0 20px var(--medium));
+        }
+        .login-container.strong .login-strengthMeter::before{
+            width: 100%;
+            background-color: var(--strong);
+            filter: drop-shadow(0 0 5px var(--strong)) drop-shadow(0 0 10px var(--strong)) drop-shadow(0 0 20px var(--strong));
+        }
+        .login-show{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 45%;
+            background-color: #333;
+            border: 6px solid #222;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-show::before{
+            content: 'Show';
+            font-size: 0.6em;
+            color: #fff;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .login-show.hide::before{
+            content: 'Hide';
+        }
+    </style>
+    <body>
+        <div id="login-page">
+            <div class="login-container">
+                <h2>Login or Sign-Up</h2>
+                <div class="login-inputBox">
+                    <input type="text" placeholder="username" id="username" style="margin-bottom:10px;border-radius: 4px;">
+                    <input type="password" placeholder="password" id="login-password" style="border-radius: 4px;">
+                    <input type="submit" value="Log In" style="margin-top: 8px;cursor: pointer;">
+                    <p style="float:left; margin-top: 5px;color: rgb(240, 240, 4);cursor: pointer;">Forgot Password</p>
+                    <p style="float:right; margin-top: 5px;color:#0f0;cursor: pointer;">Sign Up</p>
+                    
+                </div>
+                <div class="login-strengthMeter"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        let pswd = document.querySelector('#login-password');
+        let show = document.querySelector('.login-show');
+        show.onclick = function(){
+            if(pswd.type === 'password'){
+                pswd.setAttribute('type', 'text');
+                show.classList.add('hide');
+            }
+            else{
+                pswd.setAttribute('type', 'password');
+                show.classList.remove('hide');
+            }
+        }
+    </script>
+</html>
