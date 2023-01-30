@@ -18,7 +18,7 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background-color: #222;
+        background-color: transparent;
     }
 
     .login-container {
@@ -31,6 +31,7 @@
         flex-direction: column;
         border: 1px solid #111;
         gap: 10px;
+        border-radius: 6px;
         padding-bottom: 70px;
         -webkit-box-reflect: below 1px linear-gradient (transparent, transparent, #0005);
     }
@@ -126,9 +127,9 @@
             <input id="mail" type="email" id="emails" name="emails" placeholder="e-mail address"
                 style="margin-bottom:10px;border-radius: 4px;display:none;">
             <input type="password" placeholder="password" id="login-password" style="border-radius: 4px;">
-            <input type="submit" value="Log In" style="margin-top: 8px;cursor: pointer;">
+            <input id="log-in" type="submit" value="Log In" style="margin-top: 8px;cursor: pointer;">
             <p style="float:left; margin-top: 5px;color: rgb(240, 240, 4);cursor: pointer;">Forgot Password</p>
-            <p id="signsign" style="float:right; margin-top: 5px;color:#0f0;cursor: pointer;" onclick="signUp()">Log In
+            <p id="signsign" style="float:right; margin-top: 5px;color:#0f0;cursor: pointer;" onclick="signUp()">Sign In
             </p>
         </div>
         <div class="login-strengthMeter" id="meter"></div>
@@ -140,11 +141,14 @@
         if (!second) {
             document.getElementById('signsign').innerHTML = "Log In";
             document.getElementById('mail').style.display = "flex";
+            document.getElementById('log-in').value = "Sign In";
+
             second = true;
         }
         else {
             document.getElementById('signsign').innerHTML = "Sign In";
             document.getElementById('mail').style.display = "none";
+            document.getElementById('log-in').value = "Log In";
             second = false;
         }
     }

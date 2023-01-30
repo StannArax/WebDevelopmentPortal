@@ -2,6 +2,9 @@
     --clr: #161718;
     --navclr: #fdfdfd;
     --indclr: #f4f80a;
+    --backclr: white;
+    --forecld: black;
+    --navtextclr: black;
 }
 
 body {
@@ -166,4 +169,12 @@ footer #foo-right #left2 {
 footer #foo-right #left3 {
     bottom: 1%;
     cursor: pointer;
+}
+::selection{
+    background-color: var(--backclr);
+    color: var(--forecld);
+}
+#navigator ::selection{
+    background-color: transparent;
+    color: var(--navtextclr);
 }

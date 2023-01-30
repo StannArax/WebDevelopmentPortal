@@ -85,11 +85,17 @@ function changeTheme() {
   //--clr: #161718;
   //--navclr: #fdfdfd;
   //--indclr: #f4f80a;
+  //--backclr: black;
+  //--forecld: white;
+  //--navtextclr: black;
 
   if (isDark) {
     $(':root').css('--clr', '#fafafa');
     $(':root').css('--indclr', '#2cd419');
     $(':root').css('--navclr', '#212121');
+    $(':root').css('--backclr', 'black');
+    $(':root').css('--forecld', 'white');
+    $(':root').css('--navtextclr', 'white');
     document.getElementById("left11").style.fill = "black";
     document.getElementById("left12").style.fill = "black";
     document.getElementById("left21").style.fill = "black";
@@ -107,6 +113,9 @@ function changeTheme() {
     $(':root').css('--clr', '#161718');
     $(':root').css('--indclr', '#f4f80a');
     $(':root').css('--navclr', '#fdfdfd');
+    $(':root').css('--backclr', 'white');
+    $(':root').css('--forecld', 'black');
+    $(':root').css('--navtextclr', 'black');
     document.getElementById("left11").style.fill = "white";
     document.getElementById("left12").style.fill = "white";
     document.getElementById("left21").style.fill = "white";
@@ -136,7 +145,7 @@ function loginPerformClick() {
   iframe.src = "pages/register.html";
   iframe.style.width = "404px";
   iframe.style.height = "358px";
-  iframe.style.borderRadius = "4px";
+  iframe.style.border = "none";
 
   modal.appendChild(iframe);
   document.body.appendChild(modal);
