@@ -157,3 +157,6 @@ function loginPerformClick() {
 function redir(){
   window.location.href = "index.html";
 }
+function reloadPage(){
+  window.location.reload();
+}

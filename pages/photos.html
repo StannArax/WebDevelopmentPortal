@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <body>
-    <div id="header" style="align-items: center; justify-content: center; height: 100%; width: 100%; padding: 2%;">
+    <div onmousedown="resizeImage(event, true);" onmouseup="resizeImage(event, false)" id="header"
+        style="align-items: center; justify-content: center; height: 100%; width: 100%; padding: 2%;">
         <h1 id="text" style="left: 0;
         line-height: 200px;
         margin-top: -100px;
         position: absolute;
         text-align: center;
         top: 50%;
-        width: 100%;">Click here to load images!</h1>
+        width: 100%;cursor: pointer;">Click here to load images!</h1>
 
         <script>
             document.getElementById("text").addEventListener("click", function () {
@@ -43,16 +45,28 @@
                 for (let i = 0; i < images.length; i++) {
                     const imgElement = document.createElement('img');
                     imgElement.src = images[i];
-                    imgElement.style.height = "19%";
+                    imgElement.style.height = "24%";
                     imgElement.style.margin = "1%";
                     imgElement.style.float = "left";
                     imgElement.style.borderRadius = "4px";
+                    imgElement.style.position = "sticky";
+                    imgElement.id = "photo" + i;
                     imgElements.push(imgElement);
                 }
-
                 const container = document.getElementById('header');
                 imgElements.forEach(imgElement => container.appendChild(imgElement));
-
+            }
+            function resizeImage(event, control) {
+                var target = event.target;
+                var child = target.parentNode.querySelector("#" + target.id).id;
+                if (child != "header") {
+                    if (control) {
+                        document.getElementById(child).style.height = "40%";
+                    }
+                    else {
+                        document.getElementById(child).style.height = "24%";
+                    }
+                }
             }
         </script>
     </div>
